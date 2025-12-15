@@ -1,488 +1,915 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Raffi Wahyu Kurniawan - Full-Stack Developer</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Navigation -->
     <nav id="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <div class="logo">
-                    <span>RW</span>
-                </div>
-                <div class="nav-links">
-                    <a href="#home" class="nav-link active">Home</a>
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#skills" class="nav-link">Skills</a>
-                    <a href="#projects" class="nav-link">Projects</a>
-                    <a href="#contact" class="nav-link">Contact</a>
-                </div>
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
-                    <i data-lucide="menu"></i>
-                </button>
+      <div class="container">
+        <div class="nav-content">
+          <div class="logo">
+            <span>RW</span>
+          </div>
+          
+    <button id="mobileMenuBtn" class="mobile-menu-btn">
+      <i data-lucide="menu"></i>
+    </button>
+          <div class="nav-links">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#contact" class="nav-link">Contact</a>
+            <div class="lang-toggle">
+              <button class="lang-option active" onclick="setLanguage('id')">
+                ID
+              </button>
+              <button class="lang-option" onclick="setLanguage('en')">
+                EN
+              </button>
+              <span class="lang-slider"></span>
             </div>
+          </div>
         </div>
+      </div>
     </nav>
 
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
-        <a href="#home" class="mobile-link">Home</a>
-        <a href="#about" class="mobile-link">About</a>
-        <a href="#skills" class="mobile-link">Skills</a>
-        <a href="#projects" class="mobile-link">Projects</a>
-        <a href="#contact" class="mobile-link">Contact</a>
+      <a href="#home" class="mobile-link">Home</a>
+      <a href="#about" class="mobile-link">About</a>
+      <a href="#skills" class="mobile-link">Skills</a>
+      <a href="#projects" class="mobile-link">Projects</a>
+      <a href="#contact" class="mobile-link">Contact</a>
+      <div class="lang-toggle">
+        <button class="lang-option active" onclick="setLanguage('id')">
+          ID
+        </button>
+        <button class="lang-option" onclick="setLanguage('en')">EN</button>
+        <span class="lang-slider"></span>
+      </div>
     </div>
 
     <!-- Animated Background -->
     <div class="bg-blobs">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
     </div>
 
     <!-- Main Content -->
     <main>
-        <!-- Hero Section -->
-        <section id="home" class="hero-section">
-            <div class="container">
-                <div class="hero-grid">
-                    <div class="hero-content">
-                        <div class="badge">Available for freelance</div>
-                        <h1 class="hero-title">
-                            Raffi Wahyu<br>Kurniawan
-                        </h1>
-                        <p class="hero-subtitle">
-                            Full-Stack Developer<br>
-                            <span class="highlight">Web • Mobile • Desktop</span>
-                        </p>
-                        <p class="hero-description">
-                            Crafting digital experiences that blend beautiful interfaces with optimized performance.
-                            Transforming ideas into functional, user-friendly applications.
-                        </p>
-                        <div class="hero-buttons">
-                            <a href="#projects" class="btn btn-primary">View Projects</a>
-                            <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-                        </div>
-                        <div class="social-links">
-                            <a href="https://github.com" target="_blank" class="social-link">
-                                <i data-lucide="github"></i>
-                            </a>
-                            <a href="mailto:raffi@example.com" class="social-link">
-                                <i data-lucide="mail"></i>
-                            </a>
-                            <a href="https://wa.me/6281234567890" target="_blank" class="social-link">
-                                <i data-lucide="message-circle"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="hero-decorative">
-                        <div class="floating-card card-1">
-                            <div class="card-content">
-                                <div class="card-icon">💻</div>
-                                <div>
-                                    <h4>Projects</h4>
-                                    <p class="card-number" id="totalProjects">0</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="floating-card card-2">
-                            <div class="card-content">
-                                <div class="card-icon">⚡</div>
-                                <div>
-                                    <h4>Technologies</h4>
-                                    <p class="card-number" id="totalTech">0</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="floating-card card-3">
-                            <div class="card-content">
-                                <div class="card-icon">🎨</div>
-                                <div>
-                                    <h4>Hobbies</h4>
-                                    <p class="card-number">Miniature Bus</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="scroll-indicator">
-                    <span>Scroll Down</span>
-                    <i data-lucide="arrow-down"></i>
-                </div>
+      <!-- Hero Section -->
+      <section id="home" class="hero-section">
+        <div class="container">
+          <div class="hero-grid">
+            <div class="hero-content">
+              <div
+                class="badge"
+                data-id="Tersedia untuk freelance"
+                data-en="Available for freelance"
+              >
+                Available for freelance
+              </div>
+
+              <h1 class="hero-title">Raffi Wahyu<br />Kurniawan</h1>
+
+              <p class="hero-subtitle">
+                Full-Stack Developer<br />
+                <span class="highlight">Web • Mobile • Desktop</span>
+              </p>
+
+              <p
+                class="hero-description"
+                data-id="Membangun pengalaman digital dengan antarmuka yang rapi dan performa yang optimal. Mengubah ide menjadi aplikasi yang fungsional dan mudah digunakan."
+                data-en="Crafting digital experiences that blend beautiful interfaces with optimized performance. Transforming ideas into functional, user-friendly applications."
+              >
+                Crafting digital experiences that blend beautiful interfaces
+                with optimized performance. Transforming ideas into functional,
+                user-friendly applications.
+              </p>
+
+              <div class="hero-buttons">
+                <a
+                  href="#projects"
+                  class="btn btn-primary"
+                  data-id="Lihat Proyek"
+                  data-en="View Projects"
+                >
+                  View Projects
+                </a>
+                <a
+                  href="#contact"
+                  class="btn btn-secondary"
+                  data-id="Hubungi Saya"
+                  data-en="Get in Touch"
+                >
+                  Get in Touch
+                </a>
+              </div>
+
+              <div class="social-links">
+                <a href="#projects" class="social-link" aria-label="GitHub">
+                  <i data-lucide="github"></i>
+                </a>
+                <a href="#contact" class="social-link" aria-label="Email">
+                  <i data-lucide="mail"></i>
+                </a>
+                <a
+                  href="#contact~"
+                  target="_blank"
+                  class="social-link"
+                  aria-label="WhatsApp"
+                >
+                  <i data-lucide="message-circle"></i>
+                </a>
+              </div>
             </div>
-        </section>
 
-        <!-- About Section -->
-        <section id="about" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-badge">Get to know me</span>
-                    <h2 class="section-title">About Me</h2>
+            <div class="hero-decorative">
+              <div class="floating-card card-1">
+                <div class="card-content">
+                  <div class="card-icon">💻</div>
+                  <div>
+                    <h4 data-id="Proyek" data-en="Projects">Projects</h4>
+                    <p class="card-number" id="totalProjects">0</p>
+                  </div>
                 </div>
-                <div class="about-grid">
-                    <div class="about-text">
-                        <div class="glass-card">
-                            <h3 class="text-gradient">Tentang Saya</h3>
-                            <p>Saya adalah seorang pengembang web dan mobile yang fokus membangun aplikasi dengan tampilan antarmuka yang rapi serta performa yang optimal.</p>
-                            <p>Saya senang mengubah ide menjadi produk digital yang bermanfaat dan mudah digunakan.</p>
-                            <p>Saat ini saya banyak bekerja menggunakan <span class="highlight">Laravel</span>, <span class="highlight">CodeIgniter</span>, <span class="highlight">Flutter</span>, dan <span class="highlight">API modern</span>.</p>
-                        </div>
-                        <div class="stats-grid">
-                            <div class="stat-card stat-1">
-                                <div class="stat-number">50+</div>
-                                <div class="stat-label">Projects</div>
-                            </div>
-                            <div class="stat-card stat-2">
-                                <div class="stat-number">5+</div>
-                                <div class="stat-label">Years</div>
-                            </div>
-                            <div class="stat-card stat-3">
-                                <div class="stat-number">30+</div>
-                                <div class="stat-label">Clients</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="services-grid">
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i data-lucide="code-2"></i>
-                            </div>
-                            <h4>Web Development</h4>
-                            <p>Building responsive and performant web applications</p>
-                        </div>
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i data-lucide="smartphone"></i>
-                            </div>
-                            <h4>Mobile Apps</h4>
-                            <p>Cross-platform mobile development with Flutter</p>
-                        </div>
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i data-lucide="monitor"></i>
-                            </div>
-                            <h4>Desktop Apps</h4>
-                            <p>Native desktop applications for Windows and more</p>
-                        </div>
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i data-lucide="brush"></i>
-                            </div>
-                            <h4>Creative Work</h4>
-                            <p>Crafting detailed miniature bus models</p>
-                        </div>
-                    </div>
+              </div>
+
+              <div class="floating-card card-2">
+                <div class="card-content">
+                  <div class="card-icon">⚡</div>
+                  <div>
+                    <h4 data-id="Teknologi" data-en="Technologies">
+                      Technologies
+                    </h4>
+                    <p class="card-number" id="totalTech">0</p>
+                  </div>
                 </div>
+              </div>
+
+              <div class="floating-card card-3">
+                <div class="card-content">
+                  <div class="card-icon">🎨</div>
+                  <div>
+                    <h4 data-id="Hobi" data-en="Hobbies">Hobbies</h4>
+                    <p
+                      class="card-number"
+                      data-id="Miniatur Bus"
+                      data-en="Miniature Bus"
+                    >
+                      Miniature Bus
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-        </section>
+          </div>
 
-        <!-- Skills Section -->
-        <section id="skills" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-badge">What I Do Best</span>
-                    <h2 class="section-title">Skills & Expertise</h2>
-                    <p class="section-description">A comprehensive toolkit for building modern applications across multiple platforms</p>
+          <div class="scroll-indicator">
+            <span data-id="Scroll ke bawah" data-en="Scroll Down"
+              >Scroll Down</span
+            >
+            <i data-lucide="arrow-down"></i>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="section">
+        <div class="container">
+          <div class="section-header">
+            <span
+              class="section-badge"
+              data-id="Kenali Saya"
+              data-en="Get to know me"
+              >Get to know me</span
+            >
+            <h2 class="section-title" data-id="Tentang Saya" data-en="About Me">
+              About Me
+            </h2>
+          </div>
+          <div class="about-grid">
+            <div class="about-text">
+              <div class="glass-card">
+                <h3
+                  class="text-gradient"
+                  data-id="Tentang Saya"
+                  data-en="About Me"
+                >
+                  About Me
+                </h3>
+
+                <p
+                  data-id="Saya adalah seorang pengembang web dan mobile yang fokus
+                  membangun aplikasi dengan tampilan antarmuka yang rapi serta
+                  performa yang optimal."
+                  data-en="I am a web and mobile developer focused on building applications with clean interfaces and optimal performance."
+                >
+                  I am a web and mobile developer focused on building
+                  applications with clean interfaces and optimal performance.
+                </p>
+
+                <p
+                  data-id="Saya senang mengubah ide menjadi produk digital yang
+                  bermanfaat dan mudah digunakan."
+                  data-en="I love turning ideas into useful and easy-to-use digital products."
+                >
+                  I love turning ideas into useful and easy-to-use digital
+                  products.
+                </p>
+
+                <p>
+                  <span
+                    data-id="Saat ini saya banyak bekerja menggunakan"
+                    data-en="Currently I work a lot using"
+                    >Currently I work a lot using</span
+                  >
+                  <span class="highlight">Laravel</span>,
+                  <span class="highlight">CodeIgniter</span>,
+                  <span class="highlight">Flutter</span>, dan
+                  <span class="highlight">API modern</span>,
+                  <span
+                    data-id="serta memiliki
+                  pengalaman membangun aplikasi desktop menggunakan"
+                    data-en="and have experience building desktop applications using"
+                    >and have experience building desktop applications
+                    using</span
+                  >
+                  <span class="highlight">C# (WPF)</span>.
+                </p>
+              </div>
+
+              <div class="stats-grid">
+                <div class="stat-card stat-1">
+                  <div class="stat-number">10</div>
+                  <div class="stat-label" data-id="Proyek" data-en="Projects">
+                    Projects
+                  </div>
                 </div>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <div class="category-header">
-                            <div class="category-icon red-gradient"></div>
-                            <h3>Backend</h3>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>Laravel</span>
-                                <span class="highlight">90%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill red-gradient" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>CodeIgniter</span>
-                                <span class="highlight">85%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill red-gradient" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>C#</span>
-                                <span class="highlight">80%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill red-gradient" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>REST API</span>
-                                <span class="highlight">88%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill red-gradient" style="width: 88%"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <div class="category-header">
-                            <div class="category-icon blue-gradient"></div>
-                            <h3>Mobile</h3>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>Flutter</span>
-                                <span class="highlight">85%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill blue-gradient" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>Dart</span>
-                                <span class="highlight">85%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill blue-gradient" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>Mobile UI/UX</span>
-                                <span class="highlight">82%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill blue-gradient" style="width: 82%"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <div class="category-header">
-                            <div class="category-icon purple-gradient"></div>
-                            <h3>Frontend</h3>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>HTML/CSS</span>
-                                <span class="highlight">90%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill purple-gradient" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>JavaScript</span>
-                                <span class="highlight">85%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill purple-gradient" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>Responsive Design</span>
-                                <span class="highlight">88%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill purple-gradient" style="width: 88%"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <div class="category-header">
-                            <div class="category-icon green-gradient"></div>
-                            <h3>Tools & Others</h3>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>Git</span>
-                                <span class="highlight">85%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill green-gradient" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>Database Design</span>
-                                <span class="highlight">88%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill green-gradient" style="width: 88%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>Miniature Crafting</span>
-                                <span class="highlight">75%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill green-gradient" style="width: 75%"></div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="stat-card stat-2">
+                  <div class="stat-number">3</div>
+                  <div class="stat-label" data-id="Tahun" data-en="Years">
+                    Years
+                  </div>
                 </div>
-
-                <div class="tech-stack">
-                    <h3>Technologies I Work With</h3>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Laravel</span>
-                        <span class="tech-tag">CodeIgniter</span>
-                        <span class="tech-tag">Flutter</span>
-                        <span class="tech-tag">C#</span>
-                        <span class="tech-tag">Dart</span>
-                        <span class="tech-tag">PHP</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">Git</span>
-                        <span class="tech-tag">REST API</span>
-                        <span class="tech-tag">Firebase</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">HTML/CSS</span>
-                    </div>
+                <div class="stat-card stat-3">
+                  <div class="stat-number">1</div>
+                  <div class="stat-label" data-id="Klien" data-en="Clients">
+                    Clients
+                  </div>
                 </div>
+              </div>
             </div>
-        </section>
+            <div class="services-grid">
+              <div class="service-card">
+                <div class="service-icon">
+                  <i data-lucide="code-2"></i>
+                </div>
+                <h4 data-id="Pengembangan Web" data-en="Web Development">
+                  Web Development
+                </h4>
 
-        <!-- Projects Section -->
-        <section id="projects" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-badge">My Work</span>
-                    <h2 class="section-title">Featured Projects</h2>
-                    <p class="section-description">A showcase of my recent work across web, mobile, desktop, and creative projects</p>
+                <p
+                  data-id="Membangun aplikasi web yang responsif dan optimal"
+                  data-en="Building responsive and high-performance web applications"
+                >
+                  Building responsive and high-performance web applications
+                </p>
+              </div>
+              <div class="service-card">
+                <div class="service-icon">
+                  <i data-lucide="smartphone"></i>
                 </div>
-                <div class="project-filters">
-                    <button class="filter-btn active" data-filter="all">All Projects</button>
-                    <button class="filter-btn" data-filter="web">Web</button>
-                    <button class="filter-btn" data-filter="mobile">Mobile</button>
-                    <button class="filter-btn" data-filter="desktop">Desktop</button>
-                    <button class="filter-btn" data-filter="creative">Creative</button>
+                <h4 data-id="Aplikasi Mobile" data-en="Mobile Applications">
+                  Mobile Applications
+                </h4>
+                <p
+                  data-id="Pengembangan aplikasi mobile lintas platform menggunakan Flutter."
+                  data-en="Cross-platform mobile application development using Flutter."
+                >
+                  Cross-platform mobile application development using Flutter.
+                </p>
+              </div>
+
+              <div class="service-card">
+                <div class="service-icon">
+                  <i data-lucide="monitor"></i>
                 </div>
-                <div class="projects-grid" id="projectsGrid">
-                    <!-- Projects will be inserted by JavaScript -->
+                <h4 data-id="Aplikasi Desktop" data-en="Desktop Applications">
+                  Desktop Applications
+                </h4>
+                <p
+                  data-id="Pengembangan aplikasi desktop Windows menggunakan C#."
+                  data-en="Windows desktop application development using C#."
+                >
+                  Windows desktop application development using C#.
+                </p>
+              </div>
+
+              <div class="service-card">
+                <div class="service-icon">
+                  <i data-lucide="brush"></i>
                 </div>
+                <h4 data-id="Karya Kreatif" data-en="Creative Work">
+                  Creative Work
+                </h4>
+                <p
+                  data-id="Pembuatan miniatur bus buatan tangan dari bahan kardus."
+                  data-en="Handcrafted miniature bus models made from cardboard."
+                >
+                  Handcrafted miniature bus models made from cardboard.
+                </p>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-badge">Get In Touch</span>
-                    <h2 class="section-title">Contact Me</h2>
-                    <p class="section-description">Have a project in mind or just want to chat? Feel free to reach out!</p>
+      <!-- Skills Section -->
+      <section id="skills" class="section">
+        <div class="container">
+          <div class="section-header">
+            <span
+              class="section-badge"
+              data-id="Keahlian Utama Saya"
+              data-en="What I Do Best"
+            >
+              What I Do Best
+            </span>
+            <h2
+              class="section-title"
+              data-id="Keahlian & Spesialisasi"
+              data-en="Skills & Expertise"
+            >
+              Skills & Expertise
+            </h2>
+            <p
+              class="section-description"
+              data-id="Kumpulan keahlian lengkap untuk membangun aplikasi modern di berbagai platform"
+              data-en="A comprehensive toolkit for building modern applications across multiple platforms"
+            >
+              A comprehensive toolkit for building modern applications across
+              multiple platforms
+            </p>
+          </div>
+
+          <div class="skills-grid">
+            <!-- Backend -->
+            <div class="skill-category">
+              <div class="category-header">
+                <div class="category-icon red-gradient"></div>
+                <h3 data-id="Backend" data-en="Backend">Backend</h3>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Laravel</span>
+                  <span class="highlight">90%</span>
                 </div>
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <h3>Let's Connect</h3>
-                        <p>I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
-                        
-                        <div class="contact-methods">
-                            <a href="mailto:raffi.wahyu@example.com" class="contact-method">
-                                <div class="method-icon red-gradient">
-                                    <i data-lucide="mail"></i>
-                                </div>
-                                <div>
-                                    <div class="method-title">Email</div>
-                                    <div class="method-value">raffi.wahyu@example.com</div>
-                                </div>
-                            </a>
-                            <a href="https://github.com" target="_blank" class="contact-method">
-                                <div class="method-icon gray-gradient">
-                                    <i data-lucide="github"></i>
-                                </div>
-                                <div>
-                                    <div class="method-title">GitHub</div>
-                                    <div class="method-value">@raffiwahyu</div>
-                                </div>
-                            </a>
-                            <a href="https://wa.me/6281234567890" target="_blank" class="contact-method">
-                                <div class="method-icon green-gradient">
-                                    <i data-lucide="message-circle"></i>
-                                </div>
-                                <div>
-                                    <div class="method-title">WhatsApp</div>
-                                    <div class="method-value">+62 812-3456-7890</div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="additional-info">
-                            <div class="info-item">
-                                <i data-lucide="map-pin"></i>
-                                <div>
-                                    <div class="method-title">Location</div>
-                                    <div class="method-value">Indonesia</div>
-                                </div>
-                            </div>
-                            <div class="info-item">
-                                <i data-lucide="clock"></i>
-                                <div>
-                                    <div class="method-title">Response Time</div>
-                                    <div class="method-value">Usually within 24 hours</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="contact-form-container">
-                        <h3>Send a Message</h3>
-                        <form id="contactForm" class="contact-form">
-                            <div class="form-group">
-                                <label for="name">Your Name</label>
-                                <input type="text" id="name" name="name" required placeholder="John Doe">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Your Email</label>
-                                <input type="email" id="email" name="email" required placeholder="john@example.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project..."></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-full">
-                                <i data-lucide="send"></i>
-                                Send Message
-                            </button>
-                        </form>
-                    </div>
+                <div class="progress-bar">
+                  <div
+                    class="progress-fill red-gradient"
+                    style="width: 90%"
+                  ></div>
                 </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>CodeIgniter</span>
+                  <span class="highlight">85%</span>
+                </div>
+                <div class="progress-bar">
+                  <div
+                    class="progress-fill red-gradient"
+                    style="width: 85%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>C#</span>
+                  <span class="highlight">80%</span>
+                </div>
+                <div class="progress-bar">
+                  <div
+                    class="progress-fill red-gradient"
+                    style="width: 80%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>REST API</span>
+                  <span class="highlight">88%</span>
+                </div>
+                <div class="progress-bar">
+                  <div
+                    class="progress-fill red-gradient"
+                    style="width: 88%"
+                  ></div>
+                </div>
+              </div>
             </div>
-        </section>
+
+            <!-- Mobile -->
+            <div class="skill-category">
+              <div class="category-header">
+                <div class="category-icon blue-gradient"></div>
+                <h3 data-id="Mobile" data-en="Mobile">Mobile</h3>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Flutter</span>
+                  <span class="highlight">85%</span>
+                </div>
+                <div class="progress-bar">
+                  <div
+                    class="progress-fill blue-gradient"
+                    style="width: 85%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Dart</span>
+                  <span class="highlight">85%</span>
+                </div>
+                <div class="progress-bar">
+                  <div
+                    class="progress-fill blue-gradient"
+                    style="width: 85%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span data-id="UI/UX Mobile" data-en="Mobile UI/UX">
+                    Mobile UI/UX
+                  </span>
+                  <span class="highlight">82%</span>
+                </div>
+                <div class="progress-bar">
+                  <div
+                    class="progress-fill blue-gradient"
+                    style="width: 82%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Frontend -->
+            <div class="skill-category">
+              <div class="category-header">
+                <div class="category-icon purple-gradient"></div>
+                <h3 data-id="Frontend" data-en="Frontend">Frontend</h3>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>HTML/CSS</span>
+                  <span class="highlight">90%</span>
+                </div>
+                <div class="progress-bar">
+                  <div
+                    class="progress-fill purple-gradient"
+                    style="width: 90%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>JavaScript</span>
+                  <span class="highlight">85%</span>
+                </div>
+                <div class="progress-bar">
+                  <div
+                    class="progress-fill purple-gradient"
+                    style="width: 85%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span data-id="Desain Responsif" data-en="Responsive Design">
+                    Responsive Design
+                  </span>
+                  <span class="highlight">88%</span>
+                </div>
+                <div class="progress-bar">
+                  <div
+                    class="progress-fill purple-gradient"
+                    style="width: 88%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tools -->
+            <div class="skill-category">
+              <div class="category-header">
+                <div class="category-icon green-gradient"></div>
+                <h3 data-id="Alat & Lainnya" data-en="Tools & Others">
+                  Tools & Others
+                </h3>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Git</span>
+                  <span class="highlight">85%</span>
+                </div>
+                <div class="progress-bar">
+                  <div
+                    class="progress-fill green-gradient"
+                    style="width: 85%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span
+                    data-id="Perancangan Database"
+                    data-en="Database Design"
+                  >
+                    Database Design
+                  </span>
+                  <span class="highlight">88%</span>
+                </div>
+                <div class="progress-bar">
+                  <div
+                    class="progress-fill green-gradient"
+                    style="width: 88%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span
+                    data-id="Kerajinan Miniatur"
+                    data-en="Miniature Crafting"
+                  >
+                    Miniature Crafting
+                  </span>
+                  <span class="highlight">75%</span>
+                </div>
+                <div class="progress-bar">
+                  <div
+                    class="progress-fill green-gradient"
+                    style="width: 75%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tech-stack">
+            <h3
+              data-id="Teknologi yang Saya Gunakan"
+              data-en="Technologies I Work With"
+            >
+              Technologies I Work With
+            </h3>
+            <div class="tech-tags">
+              <span class="tech-tag">Laravel</span>
+              <span class="tech-tag">CodeIgniter</span>
+              <span class="tech-tag">Flutter</span>
+              <span class="tech-tag">C#</span>
+              <span class="tech-tag">Dart</span>
+              <span class="tech-tag">PHP</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">Git</span>
+              <span class="tech-tag">REST API</span>
+              <span class="tech-tag">Firebase</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">HTML/CSS</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="section">
+        <div class="container">
+          <div class="section-header">
+            <span
+              class="section-badge"
+              data-id="Portofolio Saya"
+              data-en="My Work"
+            >
+              My Work
+            </span>
+
+            <h2
+              class="section-title"
+              data-id="Proyek Unggulan"
+              data-en="Featured Projects"
+            >
+              Featured Projects
+            </h2>
+
+            <p
+              class="section-description"
+              data-id="Beberapa hasil karya terbaru saya di bidang web, mobile, desktop, dan kreatif"
+              data-en="A showcase of my recent work across web, mobile, desktop, and creative projects"
+            >
+              A showcase of my recent work across web, mobile, desktop, and
+              creative projects
+            </p>
+          </div>
+
+          <div class="project-filters">
+            <button
+              class="filter-btn active"
+              data-filter="all"
+              data-id="Semua"
+              data-en="All Projects"
+            >
+              All Projects
+            </button>
+
+            <button
+              class="filter-btn"
+              data-filter="web"
+              data-id="Web"
+              data-en="Web"
+            >
+              Web
+            </button>
+
+            <button
+              class="filter-btn"
+              data-filter="mobile"
+              data-id="Mobile"
+              data-en="Mobile"
+            >
+              Mobile
+            </button>
+
+            <button
+              class="filter-btn"
+              data-filter="desktop"
+              data-id="Desktop"
+              data-en="Desktop"
+            >
+              Desktop
+            </button>
+
+            <button
+              class="filter-btn"
+              data-filter="creative"
+              data-id="Kreatif"
+              data-en="Creative"
+            >
+              Creative
+            </button>
+          </div>
+
+          <div class="projects-grid" id="projectsGrid">
+            <!-- Rendered by JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="section">
+        <div class="container">
+          <div class="section-header">
+            <span
+              class="section-badge"
+              data-id="Hubungi Saya"
+              data-en="Get In Touch"
+            >
+              Get In Touch
+            </span>
+
+            <h2
+              class="section-title"
+              data-id="Kontak Saya"
+              data-en="Contact Me"
+            >
+              Contact Me
+            </h2>
+
+            <p
+              class="section-description"
+              data-id="Punya proyek atau sekadar ingin ngobrol? Jangan ragu untuk menghubungi saya!"
+              data-en="Have a project in mind or just want to chat? Feel free to reach out!"
+            >
+              Have a project in mind or just want to chat? Feel free to reach
+              out!
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <!-- LEFT -->
+            <div class="contact-info">
+              <h3 data-id="Mari Terhubung" data-en="Let's Connect">
+                Let's Connect
+              </h3>
+
+              <p
+                data-id="Saya selalu tertarik mendengar tentang proyek dan peluang baru. Baik itu pertanyaan atau sekadar menyapa, saya akan berusaha membalas secepat mungkin!"
+                data-en="I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!"
+              >
+                I'm always interested in hearing about new projects and
+                opportunities.
+              </p>
+
+              <div class="contact-methods">
+                <a class="contact-method">
+                  <div class="method-icon red-gradient">
+                    <i data-lucide="mail"></i>
+                  </div>
+                  <div>
+                    <div class="method-title" data-id="Email" data-en="Email">
+                      Email
+                    </div>
+                    <div class="method-value">raffi.wahyu@example.com</div>
+                  </div>
+                </a>
+
+                <a
+                  href="https://github.com"
+                  target="_blank"
+                  class="contact-method"
+                >
+                  <div class="method-icon gray-gradient">
+                    <i data-lucide="github"></i>
+                  </div>
+                  <div>
+                    <div class="method-title" data-id="GitHub" data-en="GitHub">
+                      GitHub
+                    </div>
+                    <div class="method-value">@raffiwahyu</div>
+                  </div>
+                </a>
+
+                <a
+                  href="https://wa.me/083149886707"
+                  target="_blank"
+                  class="contact-method"
+                >
+                  <div class="method-icon green-gradient">
+                    <i data-lucide="message-circle"></i>
+                  </div>
+                  <div>
+                    <div
+                      class="method-title"
+                      data-id="WhatsApp"
+                      data-en="WhatsApp"
+                    >
+                      WhatsApp
+                    </div>
+                    <div class="method-value">+62 831-4988-6707</div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="additional-info">
+                <div class="info-item">
+                  <i data-lucide="map-pin"></i>
+                  <div>
+                    <div
+                      class="method-title"
+                      data-id="Lokasi"
+                      data-en="Location"
+                    >
+                      Location
+                    </div>
+                    <div
+                      class="method-value"
+                      data-id="Indonesia"
+                      data-en="Indonesia"
+                    >
+                      Indonesia
+                    </div>
+                  </div>
+                </div>
+
+                <div class="info-item">
+                  <i data-lucide="clock"></i>
+                  <div>
+                    <div
+                      class="method-title"
+                      data-id="Waktu Respon"
+                      data-en="Response Time"
+                    >
+                      Response Time
+                    </div>
+                    <div
+                      class="method-value"
+                      data-id="Biasanya dalam 24 jam"
+                      data-en="Usually within 24 hours"
+                    >
+                      Usually within 24 hours
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- RIGHT -->
+            <div class="contact-form-container">
+              <h3 data-id="Kirim Pesan" data-en="Send a Message">
+                Send a Message
+              </h3>
+
+              <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                  <label for="name" data-id="Nama Anda" data-en="Your Name">
+                    Your Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    placeholder="John Doe"
+                    data-id-placeholder="Nama Lengkap"
+                    data-en-placeholder="Your Full Name"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="email" data-id="Email Anda" data-en="Your Email">
+                    Your Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    placeholder="john@example.com"
+                    data-id-placeholder="Email Anda"
+                    data-en-placeholder="Your Email"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="message" data-id="Pesan" data-en="Message">
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    required
+                    placeholder="Tell me about your project..."
+                    data-id-placeholder="Ceritakan tentang proyek Anda..."
+                    data-en-placeholder="Tell me about your project..."
+                  ></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full">
+                  <i data-lucide="send"></i>
+                  <span data-id="Kirim Pesan" data-en="Send Message">
+                    Send Message
+                  </span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Raffi Wahyu Kurniawan. All rights reserved.</p>
-        </div>
+      <div class="container">
+        <p>&copy; 2024 Raffi Wahyu Kurniawan. All rights reserved.</p>
+      </div>
     </footer>
 
     <!-- Project Image Modal -->
     <div id="imageModal" class="modal">
-        <span class="modal-close">&times;</span>
-        <img class="modal-content" id="modalImage" alt="Project Preview">
-        <div class="modal-caption">
-            <h3 id="modalTitle"></h3>
-            <p id="modalDescription"></p>
-            <div id="modalTags" class="modal-tags"></div>
-        </div>
+      <span class="modal-close">&times;</span>
+      <img class="modal-content" id="modalImage" alt="Project Preview" />
+      <div class="modal-caption">
+        <h3 id="modalTitle"></h3>
+        <p id="modalDescription"></p>
+        <div id="modalTags" class="modal-tags"></div>
+      </div>
     </div>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
