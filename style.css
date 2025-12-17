@@ -666,6 +666,8 @@ body {
   height: 100%;
   border-radius: 9999px;
   transition: width 1s ease;
+    width: 0;
+  transition: width 1.2s ease-in-out;
 }
 
 .tech-stack {
@@ -1053,12 +1055,11 @@ footer {
   left: 4px;
   width: calc(50% - 4px);
   height: calc(100% - 8px);
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
   border-radius: 999px;
-  transition: transform 0.3s ease;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
   box-shadow: 0 6px 20px rgba(99, 102, 241, 0.45);
 }
-
 
 /* posisi EN */
 .lang-toggle.en .lang-slider {

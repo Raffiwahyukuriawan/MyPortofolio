@@ -34,6 +34,62 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // =========================
+  // Navbar Active Link on Scroll (ScrollSpy)
+  // =========================
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  function setActiveNav() {
+    let currentSection = "";
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 120; // offset navbar
+      const sectionHeight = section.offsetHeight;
+
+      if (
+        window.scrollY >= sectionTop &&
+        window.scrollY < sectionTop + sectionHeight
+      ) {
+        currentSection = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+
+      if (link.getAttribute("href") === `#${currentSection}`) {
+        link.classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", setActiveNav);
+
+  // =========================
+  // Skill Progress Animation
+  // =========================
+  const skillSection = document.getElementById("skills");
+  let skillsAnimated = false;
+
+  function animateSkills() {
+    if (!skillSection || skillsAnimated) return;
+
+    const sectionTop = skillSection.getBoundingClientRect().top;
+    const screenHeight = window.innerHeight;
+
+    if (sectionTop < screenHeight - 100) {
+      document.querySelectorAll(".progress-fill").forEach((bar) => {
+        const value = bar.getAttribute("data-progress");
+        bar.style.width = value + "%";
+      });
+      skillsAnimated = true;
+    }
+  }
+
+  window.addEventListener("scroll", animateSkills);
+  animateSkills(); // trigger awal
+
+  // =========================
   // Language State
   // =========================
   let currentLang = localStorage.getItem("language") || "id";
@@ -260,6 +316,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const activeFilter =
       document.querySelector(".filter-btn.active")?.dataset.filter || "all";
     renderProjects(activeFilter);
+
+    // === AUTO CLOSE MOBILE MENU SETELAH GANTI BAHASA ===
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+
+    if (mobileMenu?.classList.contains("active")) {
+      mobileMenu.classList.remove("active");
+
+      if (mobileMenuBtn) {
+        mobileMenuBtn.innerHTML = '<i data-lucide="menu"></i>';
+        lucide.createIcons();
+      }
+    }
   };
 
   setLanguage(currentLang);
