@@ -13,26 +13,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const mobileLinks = document.querySelectorAll(".mobile-link");
 
   if (mobileMenuBtn && mobileMenu) {
-mobileMenuBtn.addEventListener("click", () => {
-  const isActive = mobileMenu.classList.toggle("active");
+    mobileMenuBtn.addEventListener("click", () => {
+      const isActive = mobileMenu.classList.toggle("active");
 
-  mobileMenuBtn.innerHTML = isActive
-    ? '<i data-lucide="x"></i>'
-    : '<i data-lucide="menu"></i>';
+      mobileMenuBtn.innerHTML = isActive
+        ? '<i data-lucide="x"></i>'
+        : '<i data-lucide="menu"></i>';
 
-  lucide.createIcons();
-});
-
+      lucide.createIcons();
+    });
 
     mobileLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    mobileMenu.classList.remove("active");
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("active");
 
-    mobileMenuBtn.innerHTML = '<i data-lucide="menu"></i>';
-    lucide.createIcons();
-  });
-});
-
+        mobileMenuBtn.innerHTML = '<i data-lucide="menu"></i>';
+        lucide.createIcons();
+      });
+    });
   }
 
   // =========================
@@ -241,14 +239,8 @@ mobileMenuBtn.addEventListener("click", () => {
       el.textContent = el.getAttribute(`data-${lang}`);
     });
 
-    // Update placeholder input & textarea
-    document.querySelectorAll("[data-id-placeholder]").forEach((el) => {
-      el.placeholder = el.getAttribute(`data-${lang}-placeholder`);
-    });
-
-    // === UPDATE TOGGLE SLIDING ===
-    const toggle = document.querySelector(".lang-toggle");
-    if (toggle) {
+    // === UPDATE TOGGLE SLIDING (DESKTOP + MOBILE) ===
+    document.querySelectorAll(".lang-toggle").forEach((toggle) => {
       toggle.classList.toggle("en", lang === "en");
 
       const buttons = toggle.querySelectorAll(".lang-option");
@@ -259,7 +251,7 @@ mobileMenuBtn.addEventListener("click", () => {
       } else {
         buttons[1]?.classList.add("active");
       }
-    }
+    });
 
     // Simpan bahasa
     localStorage.setItem("language", lang);
