@@ -423,3 +423,27 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "Escape") closeModal();
   });
 });
+
+// send message
+const contactForm = document.getElementById("contactForm");
+
+contactForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+
+  const subject = `Portfolio Contact from ${name}`;
+  const body = `
+Nama: ${name}
+Email: ${email}
+
+Pesan:
+${message}
+  `;
+
+  window.location.href = `mailto:raffi.wahyu@example.com?subject=${encodeURIComponent(
+    subject
+  )}&body=${encodeURIComponent(body)}`;
+});
