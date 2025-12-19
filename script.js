@@ -78,16 +78,60 @@ document.addEventListener("DOMContentLoaded", () => {
     const screenHeight = window.innerHeight;
 
     if (sectionTop < screenHeight - 100) {
+      // BAR ANIMATION
       document.querySelectorAll(".progress-fill").forEach((bar) => {
         const value = bar.getAttribute("data-progress");
         bar.style.width = value + "%";
       });
+
+      // PERCENT COUNT-UP
+      document.querySelectorAll(".percent-number").forEach((el) => {
+        const target = parseInt(el.dataset.percent);
+        let current = 0;
+
+        const interval = setInterval(() => {
+          current++;
+          el.textContent = current;
+          if (current >= target) {
+            el.textContent = target;
+            clearInterval(interval);
+          }
+        }, 15); // makin kecil = makin cepat
+      });
+
       skillsAnimated = true;
     }
   }
 
   window.addEventListener("scroll", animateSkills);
+  animateSkills();
+
+  window.addEventListener("scroll", animateSkills);
   animateSkills(); // trigger awal
+
+  // send message
+  const contactForm = document.getElementById("contactForm");
+
+  contactForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    const subject = `Portfolio Contact from ${name}`;
+    const body = `
+Nama: ${name}
+Email: ${email}
+
+Pesan:
+${message}
+  `;
+
+    window.location.href = `mailto:raffi.wahyu@example.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+  });
 
   // =========================
   // Language State
@@ -422,28 +466,4 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeModal();
   });
-});
-
-// send message
-const contactForm = document.getElementById("contactForm");
-
-contactForm.addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const message = document.getElementById("message").value;
-
-  const subject = `Portfolio Contact from ${name}`;
-  const body = `
-Nama: ${name}
-Email: ${email}
-
-Pesan:
-${message}
-  `;
-
-  window.location.href = `mailto:raffi.wahyu@example.com?subject=${encodeURIComponent(
-    subject
-  )}&body=${encodeURIComponent(body)}`;
 });

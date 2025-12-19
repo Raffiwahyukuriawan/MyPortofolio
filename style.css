@@ -664,10 +664,10 @@ body {
 
 .progress-fill {
   height: 100%;
-  border-radius: 9999px;
+  border-radius: inherit;
   transition: width 1s ease;
-    width: 0;
-  transition: width 1.2s ease-in-out;
+  width: 0;
+  transition: width 1.7s ease-in-out;
 }
 
 .tech-stack {
@@ -1009,6 +1009,10 @@ body {
 
 .form-group textarea {
   resize: none;
+}
+
+.percent-number {
+  transition: color 1.8s ease;
 }
 
 /* Footer */
