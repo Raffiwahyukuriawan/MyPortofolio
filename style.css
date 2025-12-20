@@ -667,7 +667,7 @@ body {
   border-radius: inherit;
   transition: width 1s ease;
   width: 0;
-  transition: width 1.7s ease-in-out;
+  transition: width 2s ease-in-out;
 }
 
 .tech-stack {
@@ -1012,7 +1012,30 @@ body {
 }
 
 .percent-number {
-  transition: color 1.8s ease;
+  transition: color 4s ease;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.skill-tag {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 14px;
+  color: #fff;
+  backdrop-filter: blur(6px);
+  transition: all 0.25s ease;
+}
+
+.skill-tag:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
 }
 
 /* Footer */
