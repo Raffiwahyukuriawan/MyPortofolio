@@ -282,6 +282,20 @@ ${message}
       image:
         "https://raw.githubusercontent.com/Raffiwahyukuriawan/foto-projek/refs/heads/main/mobile%20absensi.png",
     },
+    {
+      title: {
+        id: "Web Sigap Alam",
+        en: "Sigap Alam Website",
+      },
+      description: {
+        id: "SIGAP ALAM adalah aplikasi web edukasi lingkungan dan mitigasi bencana yang menyediakan informasi bencana, langkah pencegahan, serta sistem manajemen konten berbasis role (user, kontributor, admin). Aplikasi ini dibangun dengan Laravel dan Bootstrap, memiliki tampilan modern, responsif, serta sistem autentikasi yang aman.",
+        en: "SIGAP ALAM is an environmental education and disaster mitigation web application that provides disaster information, preventative measures, and a role-based content management system (user, contributor, admin). Built with Laravel and Bootstrap, the application features a modern, responsive interface and a secure authentication system.",
+      },
+      category: ["web"],
+      tags: ["Laravel", "MySQL"],
+      image:
+        "https://raw.githubusercontent.com/Raffiwahyukuriawan/foto-projek/refs/heads/main/sigap%20alam.png",
+    },
   ];
 
   // =========================
