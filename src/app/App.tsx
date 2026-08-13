@@ -1,17 +1,17 @@
-import { useState, useEffect, useRef } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'aos/dist/aos.css';
-import AOS from 'aos';
+import { useState, useEffect, useRef } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "aos/dist/aos.css";
+import AOS from "aos";
 
-import { Hero } from './components/Hero';
-import { About } from './components/About';
-import { Skills } from './components/Skills';
-import { Projects } from './components/Projects';
-import { Experience } from './components/Experience';
-import { Achievements } from './components/Achievements';
-import { Contact } from './components/Contact';
-import { Navigation } from './components/Navigation';
-import { Preloader } from './components/Preloader';
+import { Hero } from "./components/Hero";
+import { About } from "./components/About";
+import { Skills } from "./components/Skills";
+import { Projects } from "./components/Projects";
+import { Experience } from "./components/Experience";
+import { Achievements } from "./components/Achievements";
+import { Contact } from "./components/Contact";
+import { Navigation } from "./components/Navigation";
+import { Preloader } from "./components/Preloader";
 
 const CUSTOM_CSS = `
   /* ── Fonts ── */
@@ -119,7 +119,7 @@ const CUSTOM_CSS = `
 
   /* ── Marquee ── */
   .marquee-wrap { overflow: hidden; }
-  .marquee-track { display: flex; gap: 2rem; animation: marquee 22s linear infinite; white-space: nowrap; }
+  .marquee-track { display: flex; gap: 2rem; animation: marquee 22s linear infinite; white-space: nowrap; width: 100%;}
   @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
   /* ── Float ── */
@@ -220,36 +220,58 @@ const CUSTOM_CSS = `
 
 export default function App() {
   const [ready, setReady] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState("home");
   const cursorRef = useRef<HTMLDivElement>(null);
-  const ringRef  = useRef<HTMLDivElement>(null);
+  const ringRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    AOS.init({ duration: 700, easing: 'ease-out-cubic', once: true, offset: 80 });
+    AOS.init({
+      duration: 700,
+      easing: "ease-out-cubic",
+      once: true,
+      offset: 80,
+    });
   }, []);
 
   useEffect(() => {
-    const ids = ['home','about','skills','projects','experience','achievements','contact'];
+    const ids = [
+      "home",
+      "about",
+      "skills",
+      "projects",
+      "experience",
+      "achievements",
+      "contact",
+    ];
     const onScroll = () => {
       for (const id of ids) {
         const el = document.getElementById(id);
         if (el) {
           const r = el.getBoundingClientRect();
-          if (r.top <= 120 && r.bottom >= 120) { setActiveSection(id); break; }
+          if (r.top <= 120 && r.bottom >= 120) {
+            setActiveSection(id);
+            break;
+          }
         }
       }
     };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
     const onMove = (e: MouseEvent) => {
-      if (cursorRef.current) { cursorRef.current.style.left = e.clientX+'px'; cursorRef.current.style.top = e.clientY+'px'; }
-      if (ringRef.current)  { ringRef.current.style.left  = e.clientX+'px'; ringRef.current.style.top  = e.clientY+'px'; }
+      if (cursorRef.current) {
+        cursorRef.current.style.left = e.clientX + "px";
+        cursorRef.current.style.top = e.clientY + "px";
+      }
+      if (ringRef.current) {
+        ringRef.current.style.left = e.clientX + "px";
+        ringRef.current.style.top = e.clientY + "px";
+      }
     };
-    window.addEventListener('mousemove', onMove);
-    return () => window.removeEventListener('mousemove', onMove);
+    window.addEventListener("mousemove", onMove);
+    return () => window.removeEventListener("mousemove", onMove);
   }, []);
 
   return (
@@ -258,36 +280,114 @@ export default function App() {
 
       {/* Custom cursor */}
       <div ref={cursorRef} className="cursor-dot" />
-      <div ref={ringRef}  className="cursor-ring" />
+      <div ref={ringRef} className="cursor-ring" />
 
       {/* Aurora blobs */}
       <div className="aurora">
-        <div className="aurora-blob" style={{ top:'-15%',left:'-10%',width:'55vw',height:'55vw',background:'radial-gradient(circle, rgba(168,85,247,.2) 0%, transparent 70%)',animationDuration:'20s' }} />
-        <div className="aurora-blob" style={{ top:'35%',right:'-15%',width:'48vw',height:'48vw',background:'radial-gradient(circle, rgba(6,182,212,.16) 0%, transparent 70%)',animationDuration:'26s',animationDirection:'alternate-reverse' }} />
-        <div className="aurora-blob" style={{ bottom:'-10%',left:'25%',width:'42vw',height:'42vw',background:'radial-gradient(circle, rgba(244,63,94,.12) 0%, transparent 70%)',animationDuration:'32s' }} />
-        <div className="aurora-blob" style={{ top:'60%',left:'-5%',width:'30vw',height:'30vw',background:'radial-gradient(circle, rgba(16,185,129,.1) 0%, transparent 70%)',animationDuration:'18s',animationDirection:'alternate-reverse' }} />
+        <div
+          className="aurora-blob"
+          style={{
+            top: "-15%",
+            left: "-10%",
+            width: "55vw",
+            height: "55vw",
+            background:
+              "radial-gradient(circle, rgba(168,85,247,.2) 0%, transparent 70%)",
+            animationDuration: "20s",
+          }}
+        />
+        <div
+          className="aurora-blob"
+          style={{
+            top: "35%",
+            right: "0",
+            position: "relative",
+            overflow: "hidden",
+            width: "48vw",
+            height: "48vw",
+            background:
+              "radial-gradient(circle, rgba(6,182,212,.16) 0%, transparent 70%)",
+            animationDuration: "26s",
+            animationDirection: "alternate-reverse",
+          }}
+        />
+        <div
+          className="aurora-blob"
+          style={{
+            bottom: "-10%",
+            left: "25%",
+            width: "42vw",
+            height: "42vw",
+            background:
+              "radial-gradient(circle, rgba(244,63,94,.12) 0%, transparent 70%)",
+            animationDuration: "32s",
+          }}
+        />
+        <div
+          className="aurora-blob"
+          style={{
+            top: "60%",
+            left: "-5%",
+            width: "30vw",
+            height: "30vw",
+            background:
+              "radial-gradient(circle, rgba(16,185,129,.1) 0%, transparent 70%)",
+            animationDuration: "18s",
+            animationDirection: "alternate-reverse",
+          }}
+        />
       </div>
 
       {/* Preloader */}
       {!ready && <Preloader onDone={() => setReady(true)} />}
 
       {/* Main app */}
-      <div style={{ position:'relative', zIndex:10, opacity: ready ? 1 : 0, transition:'opacity .6s' }}>
+      <div
+        style={{
+          position: "relative",
+          zIndex: 10,
+          opacity: ready ? 1 : 0,
+          transition: "opacity .6s",
+        }}
+      >
         <Navigation activeSection={activeSection} />
         <main>
-          <section id="home"><Hero /></section>
-          <section id="about"><About /></section>
-          <section id="skills"><Skills /></section>
-          <section id="projects"><Projects /></section>
-          <section id="experience"><Experience /></section>
-          <section id="achievements"><Achievements /></section>
-          <section id="contact"><Contact /></section>
+          <section id="home">
+            <Hero />
+          </section>
+          <section id="about">
+            <About />
+          </section>
+          <section id="skills">
+            <Skills />
+          </section>
+          <section id="projects">
+            <Projects />
+          </section>
+          <section id="experience">
+            <Experience />
+          </section>
+          <section id="achievements">
+            <Achievements />
+          </section>
+          <section id="contact">
+            <Contact />
+          </section>
         </main>
-        <footer style={{ borderTop:'1px solid var(--c-border)', padding:'2rem 0' }}>
+        <footer
+          style={{ borderTop: "1px solid var(--c-border)", padding: "2rem 0" }}
+        >
           <div className="container">
             <div className="d-flex flex-column flex-sm-row align-items-center justify-content-between gap-2">
-              <span className="grad-text section-label fw-bold">© 2026 Raffi Wahyu Kurniawan</span>
-              <span className="section-label" style={{ color:'var(--c-muted)' }}>Full-Stack Developer · Indonesia</span>
+              <span className="grad-text section-label fw-bold">
+                © 2026 Raffi Wahyu Kurniawan
+              </span>
+              <span
+                className="section-label"
+                style={{ color: "var(--c-muted)" }}
+              >
+                Full-Stack Developer · Indonesia
+              </span>
             </div>
           </div>
         </footer>

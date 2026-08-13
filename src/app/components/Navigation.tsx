@@ -1,14 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-interface Props { activeSection: string; }
+interface Props {
+  activeSection: string;
+}
 
 const LINKS = [
-  { id:'about',        label:'About',       color:'#06B6D4' },
-  { id:'skills',       label:'Skills',      color:'#A855F7' },
-  { id:'projects',     label:'Work',        color:'#10B981' },
-  { id:'experience',   label:'Exp',         color:'#FBBF24' },
-  { id:'achievements', label:'Awards',      color:'#F43F5E' },
-  { id:'contact',      label:'Contact',     color:'#A855F7' },
+  { id: "about", label: "About", color: "#06B6D4" },
+  { id: "skills", label: "Skills", color: "#A855F7" },
+  { id: "projects", label: "Work", color: "#10B981" },
+  { id: "experience", label: "Exp", color: "#FBBF24" },
+  { id: "achievements", label: "Awards", color: "#F43F5E" },
+  { id: "contact", label: "Contact", color: "#A855F7" },
 ];
 
 const CSS = `
@@ -57,51 +59,100 @@ export function Navigation({ activeSection }: Props) {
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 40);
-    window.addEventListener('scroll', fn, { passive: true });
-    return () => window.removeEventListener('scroll', fn);
+    window.addEventListener("scroll", fn, { passive: true });
+    return () => window.removeEventListener("scroll", fn);
   }, []);
 
   const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior:'smooth' });
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setOpen(false);
   };
 
   return (
     <>
       <style>{CSS}</style>
-      <nav className={`navbar-neo fixed-top${scrolled ? ' scrolled' : ''}`} style={{ zIndex:999, padding:'.9rem 0' }}>
-        <div className="container d-flex align-items-center justify-content-between">
-          <button onClick={() => scrollTo('home')} className="nav-logo-box" aria-label="Home">RWK</button>
+      <nav
+        className={`navbar-neo ${scrolled ? " scrolled" : ""}`}
+        style={{ zIndex: 999, padding: ".9rem 0" }}
+      >
+<div className="container-fluid px-3 d-flex align-items-center justify-content-between">          <button
+            onClick={() => scrollTo("home")}
+            className="nav-logo-box"
+            aria-label="Home"
+          >
+            RWK
+          </button>
 
           <div className="nav-links-desk d-flex align-items-center gap-4">
-            {LINKS.map(l => (
-              <button key={l.id} onClick={() => scrollTo(l.id)}
-                className={`nav-link-neo${activeSection===l.id?' active':''}`}
-                style={{ color: activeSection===l.id ? l.color : undefined }}>
+            {LINKS.map((l) => (
+              <button
+                key={l.id}
+                onClick={() => scrollTo(l.id)}
+                className={`nav-link-neo${activeSection === l.id ? " active" : ""}`}
+                style={{ color: activeSection === l.id ? l.color : undefined }}
+              >
                 {l.label}
               </button>
             ))}
           </div>
 
-          <a href="mailto:raffi@example.com" className="nav-hire nav-hire-desk">Hire Me</a>
+          <a href="mailto:raffi@example.com" className="nav-hire nav-hire-desk">
+            Hire Me
+          </a>
 
-          <button className="mob-toggle btn p-1 border-0 bg-transparent" onClick={() => setOpen(!open)}
-            style={{ zIndex:999, position:'relative' }}>
-            <div style={{ width:22, height:2, background:'#F0F0FF', margin:'5px 0', transition:'all .3s', transform: open ? 'rotate(45deg) translate(5px,5px)' : 'none' }} />
-            <div style={{ width:22, height:2, background:'#F0F0FF', margin:'5px 0', transition:'all .3s', opacity: open ? 0 : 1 }} />
-            <div style={{ width:22, height:2, background:'#F0F0FF', margin:'5px 0', transition:'all .3s', transform: open ? 'rotate(-45deg) translate(5px,-5px)' : 'none' }} />
+          <button
+            className="mob-toggle btn p-1 border-0 bg-transparent"
+            onClick={() => setOpen(!open)}
+            style={{ zIndex: 999, position: "relative" }}
+          >
+            <div
+              style={{
+                width: 22,
+                height: 2,
+                background: "#F0F0FF",
+                margin: "5px 0",
+                transition: "all .3s",
+                transform: open ? "rotate(45deg) translate(5px,5px)" : "none",
+              }}
+            />
+            <div
+              style={{
+                width: 22,
+                height: 2,
+                background: "#F0F0FF",
+                margin: "5px 0",
+                transition: "all .3s",
+                opacity: open ? 0 : 1,
+              }}
+            />
+            <div
+              style={{
+                width: 22,
+                height: 2,
+                background: "#F0F0FF",
+                margin: "5px 0",
+                transition: "all .3s",
+                transform: open ? "rotate(-45deg) translate(5px,-5px)" : "none",
+              }}
+            />
           </button>
         </div>
       </nav>
 
-      <div className={`mob-menu${open ? '' : ' closed'}`}>
+      <div className={`mob-menu${open ? "" : " closed"}`}>
         {LINKS.map((l) => (
-          <button key={l.id} onClick={() => scrollTo(l.id)} className="mob-link"
-            style={{ color: activeSection===l.id ? l.color : '#F0F0FF' }}>
+          <button
+            key={l.id}
+            onClick={() => scrollTo(l.id)}
+            className="mob-link"
+            style={{ color: activeSection === l.id ? l.color : "#F0F0FF" }}
+          >
             {l.label}
           </button>
         ))}
-        <a href="mailto:raffi@example.com" className="nav-hire mt-2">Hire Me</a>
+        <a href="mailto:raffi@example.com" className="nav-hire mt-2">
+          Hire Me
+        </a>
       </div>
     </>
   );
