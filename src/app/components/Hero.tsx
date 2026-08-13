@@ -263,7 +263,7 @@ export function Hero() {
       </div>
 
       {/* Marquee */}
-      {/* <div className="hero-ticker">
+      <div className="hero-ticker">
         <div className="marquee-track">
           {doubled.map((t, i) => (
             <span key={i} className="ticker-item">
@@ -272,7 +272,7 @@ export function Hero() {
             </span>
           ))}
         </div>
-      </div> */}
+      </div>
     </>
   );
 }
