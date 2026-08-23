@@ -75,14 +75,15 @@ export function Navigation({ activeSection }: Props) {
         className={`navbar-neo ${scrolled ? " scrolled" : ""}`}
         style={{ zIndex: 999, padding: ".9rem 0" }}
       >
-<div className="container-fluid px-3 d-flex align-items-center justify-content-between">          <button
+        <div className="container-fluid px-3 d-flex align-items-center justify-content-between">
+          {" "}
+          <button
             onClick={() => scrollTo("home")}
             className="nav-logo-box"
             aria-label="Home"
           >
             RWK
           </button>
-
           <div className="nav-links-desk d-flex align-items-center gap-4">
             {LINKS.map((l) => (
               <button
@@ -95,11 +96,9 @@ export function Navigation({ activeSection }: Props) {
               </button>
             ))}
           </div>
-
           <a href="mailto:raffi@example.com" className="nav-hire nav-hire-desk">
             Hire Me
           </a>
-
           <button
             className="mob-toggle btn p-1 border-0 bg-transparent"
             onClick={() => setOpen(!open)}

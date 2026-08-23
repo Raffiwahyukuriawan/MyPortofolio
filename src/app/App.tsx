@@ -36,7 +36,7 @@ const CUSTOM_CSS = `
 
   *, *::before, *::after { box-sizing: border-box; cursor: none !important; }
   html { scroll-behavior: smooth; }
-  body { background: var(--c-bg); color: var(--c-fg); overflow-x: hidden; }
+  body { background: var(--c-bg); color: var(--c-fg); overflow-x: clip; }
   ::-webkit-scrollbar { width: 3px; }
   ::-webkit-scrollbar-track { background: var(--c-bg); }
   ::-webkit-scrollbar-thumb { background: linear-gradient(var(--c-purple), var(--c-cyan)); }

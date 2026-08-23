@@ -7,10 +7,10 @@ const SERVICES = [
 
 const TERM = [
   { key:'name',       val:'Raffi Wahyu Kurniawan', color:'#06B6D4' },
-  { key:'school',     val:'SMK Negeri 4 Bandung',  color:'#A855F7' },
+  { key:'school',     val:'SMK Negeri 2 Karanganyar',  color:'#A855F7' },
   { key:'major',      val:'RPL (Software Engineering)', color:'#10B981' },
-  { key:'location',   val:'Bandung, Indonesia',    color:'#FBBF24' },
-  { key:'hobby',      val:'Miniatur Bus, Badminton', color:'#F43F5E' },
+  { key:'location',   val:'Karanganyar, Indonesia',    color:'#FBBF24' },
+  { key:'hobby',      val:'Membuat Miniatur', color:'#F43F5E' },
   { key:'status',     val:'Open to opportunities', color:'#10B981' },
 ];
 
@@ -66,9 +66,9 @@ export function About() {
                 <div className="mt-2" style={{ color:'rgba(240,240,255,.2)' }}>_</div>
               </div>
               <p style={{ color:'rgba(240,240,255,.55)', lineHeight:1.9, fontSize:'.9rem' }}>
-                Saya adalah developer muda dari Bandung yang passionate banget di bidang teknologi.
+                Saya adalah developer muda dari Karanganyar yang passionate banget di bidang teknologi.
                 Suka explore teknologi baru, problem solving, dan bikin produk yang user-friendly.
-                Di luar coding, saya koleksi miniatur bus dan pernah aktif sebagai atlet badminton.
+                Di luar coding, saya juga koleksi miniatur bus.
               </p>
             </div>
 

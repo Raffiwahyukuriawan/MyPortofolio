@@ -3,9 +3,6 @@ import { useState, useEffect } from "react";
 const ROLES = [
   "Full-Stack Developer",
   "Web Developer",
-  "Mobile Developer",
-  "Desktop Developer",
-  "UI/UX Enthusiast",
 ];
 
 const TICKER = [
@@ -212,9 +209,9 @@ export function Hero() {
               fontSize: ".95rem",
             }}
           >
-            Mahasiswa SMK Negeri 4 Bandung — membangun web, mobile, dan desktop
-            apps. Pecinta miniatur bus dan mantan atlet badminton yang tak
-            sengaja jatuh cinta dengan coding.
+            Merancang pengalaman digital yang memadukan antarmuka indah dengan
+            performa optimal. Mengubah ide menjadi aplikasi yang fungsional dan
+            mudah digunakan.
           </p>
 
           {/* CTA buttons */}

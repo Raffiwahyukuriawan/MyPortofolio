@@ -3,24 +3,24 @@ import { useState } from 'react';
 const PROJECTS = [
   {
     num:'01', cat:'web', color:'#06B6D4',
-    title:'E-Learning Platform',
-    desc:'Platform belajar online berbasis React + Node.js dengan fitur live quiz, progress tracking, dan sertifikat otomatis.',
-    tags:['React','Node.js','MongoDB','Socket.io'],
-    img:'https://images.unsplash.com/photo-1610484826967-09c5720778c7?w=800&h=500&fit=crop&auto=format',
+    title:'Kasir Toko Ravira Mart',
+    desc:'Aplikasi kasir untuk Toko Ravira Mart yang dilengkapi dengan pencatatan transaksi, manajemen produk, laporan penjualan, serta pengelolaan stok secara real-time.',
+    tags:['Laravel 11', 'MySQL','Tailwind CSS'],
+    img:'https://raw.githubusercontent.com/Raffiwahyukuriawan/foto-projek/refs/heads/main/web%20kasir%20(34).png',
   },
   {
     num:'02', cat:'mobile', color:'#A855F7',
-    title:'Bus Tracker App',
-    desc:'Aplikasi Flutter untuk tracking jadwal bus real-time dengan peta interaktif dan notifikasi push.',
-    tags:['Flutter','Firebase','Google Maps'],
-    img:'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&h=500&fit=crop&auto=format',
+    title:'Hotel Smart System',
+    desc:'Mobile app untuk pemesanan kamar hotel dan makanan secara real-time, dilengkapi fitur manajemen pesanan, detail kamar, dan tracking status layanan.',
+    tags:['Flutter', 'Dart', 'API'],
+    img:'https://raw.githubusercontent.com/Raffiwahyukuriawan/foto-projek/refs/heads/main/hss%20mobile.jpeg',
   },
   {
     num:'03', cat:'desktop', color:'#FBBF24',
-    title:'Inventory Management',
-    desc:'Sistem manajemen inventaris desktop dengan Python + SQLite, laporan PDF, dan barcode scanner.',
-    tags:['Python','SQLite','Tkinter'],
-    img:'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop&auto=format',
+    title:'Aplikasi Admin Sistem Reservasi Hotel',
+    desc:'Aplikasi admin untuk sistem reservasi hotel yang dilengkapi dengan pengelolaan kamar, manajemen data tamu, Pengelolaan menu restorant, dan laporan reservasi.',
+    tags:['C#', 'WPF', 'MySQL'],
+    img:'https://raw.githubusercontent.com/Raffiwahyukuriawan/foto-projek/refs/heads/main/admin%20reservasi%20hotel.png',
   },
   {
     num:'04', cat:'web', color:'#06B6D4',
@@ -42,6 +42,13 @@ const PROJECTS = [
     desc:'Website portfolio personal dengan animasi aurora, glitch effects, custom cursor, dan preloader keren.',
     tags:['React','TypeScript','CSS Animations'],
     img:'https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&h=500&fit=crop&auto=format',
+  },
+  {
+    num:'07', cat:'creative', color:'#F43F5E',
+    title:'Miniatur Bus SJM BATOSAI',
+    desc:'Miniatur bus SR 2 XHD Prime handmade dari kardus dengan detail eksterior dan interior yang realistis.',
+    tags:["Handmade", "Miniature"],
+    img:'https://raw.githubusercontent.com/Raffiwahyukuriawan/foto-projek/refs/heads/main/sjm%20batosai.jpg',
   },
 ];
 
