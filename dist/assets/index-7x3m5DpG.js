@@ -9966,7 +9966,7 @@ const ef = $d(Zd),
     { val: "∞", label: "Lines of Code", color: "#FBBF24" },
   ],
   nf = `
-  .hero-section { min-height:100vh; display:flex; align-items:center; padding-top:80px; }
+  .hero-section { min-height:100vh; display:flex; align-items:center; padding-top:80px; margin-bottom:30px;}
   .hero-name-line { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; text-transform:uppercase;
     line-height:.88; letter-spacing:-.03em; }
   .hero-stroke { -webkit-text-stroke:1.5px #F0F0FF; color:transparent; }

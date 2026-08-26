@@ -24,10 +24,10 @@ const PROJECTS = [
   },
   {
     num:'04', cat:'web', color:'#06B6D4',
-    title:'Library Web System',
-    desc:'Sistem perpustakaan berbasis web dengan fitur peminjaman, katalog buku, dan laporan adminstrasi.',
-    tags:['PHP','MySQL','Bootstrap'],
-    img:'https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&h=500&fit=crop&auto=format',
+    title:'Sistem Penggajian',
+    desc:'Aplikasi penggajian berbasis web yang dilengkapi fitur lengkap seperti melihat seluruh daftar absensi karyawan, manajemen data tunjangan, pengelolaan izin karyawan, perhitungan gaji otomatis, serta pencetakan slip gaji secara cepat dan akurat.',
+    tags:['Laravel','MySQL'],
+    img:'https://raw.githubusercontent.com/Raffiwahyukuriawan/foto-projek/refs/heads/main/penggajian.png',
   },
   {
     num:'05', cat:'mobile', color:'#A855F7',
