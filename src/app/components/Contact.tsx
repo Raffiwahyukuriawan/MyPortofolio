@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const METHODS = [
-  { icon:'✉️', label:'Email',     val:'raffi@example.com',    color:'#06B6D4', href:'mailto:raffi@example.com' },
+  { icon:'✉️', label:'Email',     val:'wahyukurniawanraffi.com',    color:'#06B6D4', href:'mailto:wahyukurniawanraffi.com' },
   { icon:'💼', label:'LinkedIn',  val:'linkedin.com/in/raffi', color:'#A855F7', href:'#' },
   { icon:'🐱', label:'GitHub',    val:'github.com/raffi',      color:'#10B981', href:'#' },
-  { icon:'💬', label:'WhatsApp',  val:'+62 812 3456 7890',     color:'#FBBF24', href:'#' },
+  { icon:'💬', label:'WhatsApp',  val:'+62 831 4988 6707',     color:'#FBBF24', href:'#' },
 ];
 
 const CSS = `
