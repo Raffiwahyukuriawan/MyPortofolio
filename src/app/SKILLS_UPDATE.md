@@ -142,3 +142,4 @@ Semua teks skill categories sekarang fully bilingual!
 Website portfolio sekarang memiliki **Skills Section yang lebih modern, visual, dan menarik** tanpa progress bars yang membosankan. Fokus pada **kategori development** dengan **icon yang eye-catching**, **hover effects yang smooth**, dan **tech badges** yang informatif.
 
 Tampilan tetap **clean**, **professional**, dan **engaging** untuk pengunjung! 🎉
+
