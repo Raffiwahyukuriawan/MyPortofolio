@@ -4,7 +4,7 @@ const METHODS = [
   { icon:'✉️', label:'Email',     val:'wahyukurniawanraffi.com',    color:'#06B6D4', href:'mailto:wahyukurniawanraffi.com' },
   { icon:'💼', label:'LinkedIn',  val:'linkedin.com/in/raffi', color:'#A855F7', href:'#' },
   { icon:'🐱', label:'GitHub',    val:'github.com/raffi',      color:'#10B981', href:'#' },
-  { icon:'💬', label:'WhatsApp',  val:'+62 831 4988 6707',     color:'#FBBF24', href:'#' },
+  { icon:'💬', label:'WhatsApp',  val:'+62 831 4988 6707',     color:'#FBBF24', href:'https://wa.me/6283149886707?text=Halo%20Raffi,%20saya%20tertarik%20dengan%20jasa%20Anda' },
 ];
 
 const CSS = `
